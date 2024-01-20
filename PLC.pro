@@ -17,27 +17,31 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    datavisualization.cpp \
-    main.cpp \
-    mainwindow.cpp \
-    parameteradjustment.cpp \
-    serialportmanager.cpp \
-    simulationanimation.cpp
+    src/DataVisualization/datavisualization.cpp \
+    src/main.cpp \
+    src/MainWindow/mainwindow.cpp \
+    src/ParameterAdjustment/parameteradjustment.cpp \
+    src/SerialPortManager/serialportmanager.cpp \
+    src/SimulationAnimation/simulationanimation.cpp
 
 HEADERS += \
-    datavisualization.h \
-    mainwindow.h \
-    parameteradjustment.h \
-    serialportmanager.h \
-    simulationanimation.h
+    src/DataVisualization/datavisualization.h \
+    src/MainWindow/mainwindow.h \
+    src/ParameterAdjustment/parameteradjustment.h \
+    src/SerialPortManager/serialportmanager.h \
+    src/SimulationAnimation/simulationanimation.h
 
 FORMS += \
     mainwindow.ui
+
+RESOURCES +=\
+    res/
+
+DISTFILES += \
+    docs/structure.md
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-DISTFILES += \
-    structure.md
