@@ -1,4 +1,4 @@
-#include "simulationanimation.h"
+#include "../header/simulationanimation.h"
 
 SimulationAnimation::SimulationAnimation()
 {

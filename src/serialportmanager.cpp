@@ -1,4 +1,4 @@
-#include "serialportmanager.h"
+#include "../header/serialportmanager.h"
 
 SerialPortManager::SerialPortManager()
 {
