@@ -2,11 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QtCharts>
+#include <QStackedWidget>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
-using namespace QtCharts;
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -17,7 +16,16 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_exitButton_clicked();
+
+    void on_viewDataButton_clicked();
+
+    void on_enterExpButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    QStackedWidget *mainStackWidget;
+    QWidget *expViewWidget;
 };
 #endif // MAINWINDOW_H

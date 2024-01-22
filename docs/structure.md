@@ -14,12 +14,15 @@ YourProjectName/
 │   │   ├── ParameterWidget.cpp   # 参数调整的UI和逻辑
 │   │   └── ParameterWidget.h     # 参数调整窗口类定义
 │   │
-│   ├── DataVisualization/       # 数据可视化模块
-│   │   ├── ChartView.cpp         # 图表视图逻辑
-│   │   ├── ChartView.h           # 图表视图类定义
-│   │   ├── TableView.cpp         # 表格视图逻辑
-│   │   └── TableView.h           # 表格视图类定义
-│   │
+|   |—— DataVisualization/
+|   |   ├── ChartView.cpp
+|   |   ├── ChartView.h
+|   |   ├── TableView.cpp
+|   |   ├── TableView.h
+|   |   ├── DataVisualizationWidget.cpp  # 数据可视化 Widget 的实现
+|   |   └── DataVisualizationWidget.h    # 数据可视化 Widget 的类定义
+|   |
+|   │
 │   └── SimulationAnimation/     # 模拟动画模块
 │       ├── AnimationWidget.cpp  # 动画显示逻辑
 │       └── AnimationWidget.h    # 动画显示类定义
