@@ -1,4 +1,4 @@
-#include "../header/mainwindow.h"
+#include "mainwindow.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -8,13 +8,6 @@ MainWindow::MainWindow(QWidget *parent)
     , expViewWidget(new QWidget())
 {
     ui->setupUi(this);
-    mainStackWidget->addWidget(dataViewWidget);
-    mainStackWidget->addWidget(expViewWidget);
-
-    QLineEdit *lineEdit1 = new QLineEdit(dataViewWidget);
-    QLineEdit *lineEdit2 = new QLineEdit(expViewWidget);
-    lineEdit1->setText("data");
-    lineEdit2->setText("exp");
 
 
     QVBoxLayout *layout = new QVBoxLayout();
@@ -40,5 +33,5 @@ void MainWindow::on_viewDataButton_clicked()
 
 void MainWindow::on_enterExpButton_clicked()
 {
-    mainStackWidget->setCurrentIndex(1);
+
 }

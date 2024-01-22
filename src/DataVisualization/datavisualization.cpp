@@ -1,4 +1,4 @@
-#include "../header/datavisualization.h"
+#include "datavisualization.h"
 
 DataVisualization::DataVisualization()
 {

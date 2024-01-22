@@ -3,7 +3,7 @@ QT       += charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++11
+CONFIG += sdk_no_version_check
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -17,7 +17,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    src/DataVisualization/customchartview.cpp \
     src/DataVisualization/datavisualization.cpp \
+    src/DataVisualization/datavisualizationwidget.cpp \
     src/main.cpp \
     src/MainWindow/mainwindow.cpp \
     src/ParameterAdjustment/parameteradjustment.cpp \
@@ -25,14 +27,18 @@ SOURCES += \
     src/SimulationAnimation/simulationanimation.cpp
 
 HEADERS += \
+    src/DataVisualization/customchartview.h \
     src/DataVisualization/datavisualization.h \
+    src/DataVisualization/datavisualizationwidget.h \
     src/MainWindow/mainwindow.h \
     src/ParameterAdjustment/parameteradjustment.h \
     src/SerialPortManager/serialportmanager.h \
     src/SimulationAnimation/simulationanimation.h
 
 FORMS += \
-    mainwindow.ui
+    forms/mainwindow.ui \
+    forms/datavisualizationwidget.ui \
+    forms/customchartview.ui
 
 RESOURCES +=\
     res/

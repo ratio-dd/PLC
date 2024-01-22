@@ -1,4 +1,4 @@
-#include "../header/parameteradjustment.h"
+#include "parameteradjustment.h"
 
 ParameterAdjustment::ParameterAdjustment()
 {
