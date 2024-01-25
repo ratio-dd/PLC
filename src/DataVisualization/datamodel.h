@@ -10,7 +10,7 @@ class DataModel : public QObject
 public:
     DataModel(QObject *parent = nullptr);
     void loadDataFromFile(const QString &filePath);
-    QString getDataAsText() const;  // 新方法
+    QString getDataAsText() const;
 
 private:
     QVector<QStringList> data;  // 存储解析后的数据

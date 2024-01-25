@@ -9,8 +9,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->ShowData->setText("Hello");
-
     QVBoxLayout *layout = new QVBoxLayout();
     layout->addWidget(mainStackWidget);
     setLayout(layout);
