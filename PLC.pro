@@ -17,8 +17,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    src/DataVisualization/customchartview.cpp \
-    src/DataVisualization/datavisualization.cpp \
     src/DataVisualization/datavisualizationwidget.cpp \
     src/main.cpp \
     src/MainWindow/mainwindow.cpp \
@@ -26,9 +24,10 @@ SOURCES += \
     src/SerialPortManager/serialportmanager.cpp \
     src/SimulationAnimation/simulationanimation.cpp
 
+
 HEADERS += \
     src/DataVisualization/customchartview.h \
-    src/DataVisualization/datavisualization.h \
+    src/DataVisualization/datamodel.h \
     src/DataVisualization/datavisualizationwidget.h \
     src/MainWindow/mainwindow.h \
     src/ParameterAdjustment/parameteradjustment.h \
@@ -37,8 +36,7 @@ HEADERS += \
 
 FORMS += \
     forms/mainwindow.ui \
-    forms/datavisualizationwidget.ui \
-    forms/customchartview.ui
+    forms/datavisualizationwidget.ui
 
 RESOURCES +=\
     res/
