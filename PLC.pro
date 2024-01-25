@@ -22,7 +22,9 @@ SOURCES += \
     src/MainWindow/mainwindow.cpp \
     src/ParameterAdjustment/parameteradjustment.cpp \
     src/SerialPortManager/serialportmanager.cpp \
-    src/SimulationAnimation/simulationanimation.cpp
+    src/SimulationAnimation/simulationanimation.cpp \
+    src/DataVisualization/datamodel.cpp \
+    tests/testDataModel.cpp
 
 
 HEADERS += \
@@ -42,7 +44,11 @@ RESOURCES +=\
     res/
 
 DISTFILES += \
-    docs/structure.md
+    docs/structure.md \
+    tests/test.cvs
+
+#Un comment bottom line when use TEST_MODE
+#DEFINES += TEST_MODE
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
