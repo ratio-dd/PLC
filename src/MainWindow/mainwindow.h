@@ -25,7 +25,5 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    QStackedWidget *mainStackWidget;
-    QWidget *expViewWidget;
 };
 #endif // MAINWINDOW_H

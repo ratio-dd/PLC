@@ -4,14 +4,9 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    , mainStackWidget(new QStackedWidget(this))
-    , expViewWidget(new QWidget())
 {
     ui->setupUi(this);
 
-    QVBoxLayout *layout = new QVBoxLayout();
-    layout->addWidget(mainStackWidget);
-    setLayout(layout);
 }
 
 MainWindow::~MainWindow()
@@ -27,7 +22,7 @@ void MainWindow::on_exitButton_clicked()
 
 void MainWindow::on_viewDataButton_clicked()
 {
-    mainStackWidget->setCurrentIndex(0);
+    ui->mainStackedWidget->setCurrentIndex(1);
 }
 
 void MainWindow::on_enterExpButton_clicked()
