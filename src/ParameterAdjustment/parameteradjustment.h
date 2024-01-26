@@ -6,6 +6,7 @@ class ParameterAdjustment
 {
 public:
     ParameterAdjustment();
+
 };
 
 #endif // PARAMETERADJUSTMENT_H

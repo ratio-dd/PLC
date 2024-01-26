@@ -128,7 +128,7 @@
        </layout>
       </widget>
       <widget class="DataVisualizationWidget" name="dataPage"/>
-      <widget class="QWidget" name="expPage"/>
+      <widget class="ParameterAdjustmentWidget" name="expPage"/>
      </widget>
     </item>
    </layout>
@@ -149,6 +149,12 @@
    <class>DataVisualizationWidget</class>
    <extends>QWidget</extends>
    <header>src/DataVisualization/datavisualizationwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ParameterAdjustmentWidget</class>
+   <extends>QWidget</extends>
+   <header>src/ParameterAdjustment/parameteradjustmentwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

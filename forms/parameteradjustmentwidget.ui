@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DataVisualizationWidget</class>
- <widget class="QWidget" name="DataVisualizationWidget">
+ <class>ParameterAdjustmentWidget</class>
+ <widget class="QWidget" name="ParameterAdjustmentWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>704</width>
-    <height>563</height>
+    <width>583</width>
+    <height>410</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,11 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QWidget" name="chartWidget" native="true"/>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QPushButton" name="backButton">
@@ -29,7 +33,7 @@
       <enum>Qt::RightToLeft</enum>
      </property>
      <property name="text">
-      <string>return</string>
+      <string>PushButton</string>
      </property>
     </widget>
    </item>
