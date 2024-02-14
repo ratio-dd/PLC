@@ -26,7 +26,8 @@ SOURCES += \
     src/SerialPortManager/serialportmanager.cpp \
     src/SimulationAnimation/simulationanimation.cpp \
     src/DataVisualization/datamodel.cpp \
-    tests/testDataModel.cpp
+    tests/testDataModel.cpp \
+    libs/qcustomplot.cpp
 
 
 HEADERS += \
@@ -38,7 +39,8 @@ HEADERS += \
     src/ParameterAdjustment/parameteradjustmentwidget.h \
     src/SerialPortManager/serialportmanager.h \
     src/SimulationAnimation/simulationanimation.h \
-    src/SimulationAnimation/simulationanimationwidget.h
+    src/SimulationAnimation/simulationanimationwidget.h \
+    libs/qcustomplot.h
 
 FORMS += \
     forms/mainwindow.ui \
