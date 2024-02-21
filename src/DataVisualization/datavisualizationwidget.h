@@ -19,6 +19,9 @@ public:
 signals:
     void backButtonClicked();
 
+private slots:
+    void on_resetZoomButton_clicked();
+
 private:
     Ui::DataVisualizationWidget *ui;
 };
