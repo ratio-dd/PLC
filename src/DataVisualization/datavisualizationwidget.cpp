@@ -29,6 +29,9 @@ DataVisualizationWidget::DataVisualizationWidget(QWidget *parent) :
     // 设置x轴的范围 (根据随机数据量）
     ui->chartWidget->xAxis->setRange(0, pointsCount * interval / 1000.0);
 
+    // 设置图表中点的样式
+    ui->chartWidget->graph(0)->setScatterStyle(QCPScatterStyle::ssDisc);
+
     // 使图表可随着鼠标缩放、移动、选择图像
     ui->chartWidget->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
     ui->chartWidget->replot();
