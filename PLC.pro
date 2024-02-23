@@ -31,7 +31,6 @@ SOURCES += \
 
 
 HEADERS += \
-    src/DataVisualization/customchartview.h \
     src/DataVisualization/datamodel.h \
     src/DataVisualization/datavisualizationwidget.h \
     src/MainWindow/mainwindow.h \
