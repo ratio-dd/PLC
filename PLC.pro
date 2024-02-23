@@ -54,8 +54,7 @@ DISTFILES += \
     docs/structure.md \
     tests/test.cvs
 
-#Un comment bottom line when use TEST_MODE
-#DEFINES += TEST_MODE
+DEFINES += TEST_MODE
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
