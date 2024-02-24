@@ -8,44 +8,36 @@ DataVisualizationWidget::DataVisualizationWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::DataVisualizationWidget) {
     ui->setupUi(this);
+
     connect(ui->backButton, &QPushButton::clicked, this, &DataVisualizationWidget::backButtonClicked);
     connect(ui->chartWidget, &QCustomPlot::mouseMove, this, &DataVisualizationWidget::mouse_position_show);
 
-
     ui->chartWidget->addGraph();
-
 
     // 设置X轴为毫秒时间显示
     QSharedPointer<QCPAxisTickerDateTime> dateTimeTicker(new QCPAxisTickerDateTime);
     ui->chartWidget->xAxis->setTicker(dateTimeTicker);
     dateTimeTicker->setDateTimeFormat("ss.zzz");
 
-    //    //生成随机数据
-    //    int pointsCount = 10; // 添加的数据点数量
-    //    for(int i = 0; i < pointsCount; ++i) {
-    //        double key = i * interval; // x轴的值从0开始，每次递增100毫秒
-    //        int value = QRandomGenerator::global()->bounded(5); // 生成0到99之间的随机数
-    //        ui->chartWidget->graph(0)->addData(key / 1000.0, value); // 添加数据点
-    //    }
-
+    // TEST_MODE则生成随机数据
     #ifdef TEST_MODE
     DataModel DM;
     DataPoints = DM.RandomData(50);
     #else
-
     #endif
 
+    // 添加数据
     QSharedPointer<QCPGraphDataContainer> dataContainer = ui->chartWidget->graph(0)->data();
     dataContainer->add(DataPoints);
+
     // 设置x轴的范围 (根据随机数据量）
     ui->chartWidget->xAxis->setRange(0, DataPoints.count() * interval / 1000);
     ui->chartWidget->yAxis->setRange(0, 10);
-
     // 设置图表中点的样式
     ui->chartWidget->graph(0)->setScatterStyle(QCPScatterStyle::ssDisc);
-
     // 使图表可随着鼠标缩放、移动、选择图像
     ui->chartWidget->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
+    //重新绘制图表
     ui->chartWidget->replot();
 }
 
