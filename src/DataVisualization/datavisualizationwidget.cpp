@@ -39,6 +39,34 @@ DataVisualizationWidget::DataVisualizationWidget(QWidget *parent) :
     ui->chartWidget->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
     //重新绘制图表
     ui->chartWidget->replot();
+
+    // 设置图例相关信息
+    ui->tableWidget->setRowCount(4);
+    ui->tableWidget->setColumnCount(4);
+    //图例样式表设定
+    ui->tableWidget->setStyleSheet(
+                    "QTableWidget { background-color: rgba(255, 255, 255, 127); }"
+                    "QTableWidget::item { background-color: rgba(255, 255, 255, 127);"
+                    "color: black}"
+                    "QHeaderView::section { "
+                    "background-color: rgba(255, 255, 255, 54); "
+                    "border: 1px solid grey; " // 可以添加边框来增强视觉效果
+                    "color: black; "
+                    "}");
+    ui->tableWidget->setSelectionMode(QAbstractItemView::NoSelection);
+    QStringList headers = {"内容", "坐标范围", "当前值", "单位"};
+    ui->tableWidget->setHorizontalHeaderLabels(headers);
+    ui->tableWidget->setColumnWidth(0, 70);
+    ui->tableWidget->setColumnWidth(1, 90);
+    ui->tableWidget->setColumnWidth(2, 80);
+    ui->tableWidget->setColumnWidth(3, 40);
+    ui->tableWidget->setItem(0, 0, new QTableWidgetItem("绝对时钟"));
+    ui->tableWidget->setItem(1, 0, new QTableWidgetItem("设定值"));
+    ui->tableWidget->setItem(2, 0, new QTableWidgetItem("测量值"));
+    ui->tableWidget->setItem(3, 0, new QTableWidgetItem("加热比例"));
+    ui->tableWidget->setItem(0, 1, new QTableWidgetItem("还没想好放什么"));
+
+
 }
 
 DataVisualizationWidget::~DataVisualizationWidget() {
