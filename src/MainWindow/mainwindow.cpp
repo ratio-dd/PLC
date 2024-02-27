@@ -5,42 +5,44 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
-{
+    , ui(new Ui::MainWindow) {
     ui->setupUi(this);
-    DataVisualizationWidget *dvWidget = qobject_cast<DataVisualizationWidget*>(ui->mainStackedWidget->widget(1));
-    if (dvWidget) {
+
+    // 添加实验（应用于主页选择界面）
+    QStringList exp = {"实验一", "实验二", "实验三", "实验四"};
+    ui->expSelectComboBox->addItems(exp);
+
+    DataVisualizationWidget *dvWidget = qobject_cast<DataVisualizationWidget *>(ui->mainStackedWidget->widget(1));
+    if(dvWidget) {
         connect(dvWidget, &DataVisualizationWidget::backButtonClicked, this, &MainWindow::backToDefault);
     }
 
-    ParameterAdjustmentWidget *paWidget = qobject_cast<ParameterAdjustmentWidget*>(ui->mainStackedWidget->widget(2));
-    if (paWidget) {
+    ParameterAdjustmentWidget *paWidget = qobject_cast<ParameterAdjustmentWidget *>(ui->mainStackedWidget->widget(2));
+    if(paWidget) {
         connect(paWidget, &ParameterAdjustmentWidget::backButtonClicked, this, &MainWindow::backToDefault);
     }
+
+
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
     delete ui;
 }
 
-void MainWindow::backToDefault(){
+void MainWindow::backToDefault() {
 
     ui->mainStackedWidget->setCurrentIndex(0);
 }
 
-void MainWindow::on_exitButton_clicked()
-{
+void MainWindow::on_exitButton_clicked() {
     this->close();
 }
 
-void MainWindow::on_viewDataButton_clicked()
-{
+void MainWindow::on_viewDataButton_clicked() {
     ui->mainStackedWidget->setCurrentIndex(1);
 }
 
-void MainWindow::on_enterExpButton_clicked()
-{
+void MainWindow::on_enterExpButton_clicked() {
 
     ui->mainStackedWidget->setCurrentIndex(2);
 }

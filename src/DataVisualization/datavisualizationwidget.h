@@ -5,21 +5,20 @@
 #include <QWidget>
 
 namespace Ui {
-class DataVisualizationWidget;
+    class DataVisualizationWidget;
 }
 
-class  DataVisualizationWidget: public QWidget
-{
+class  DataVisualizationWidget: public QWidget {
     Q_OBJECT
 
-public:
+  public:
     explicit DataVisualizationWidget(QWidget *parent = nullptr);
     ~DataVisualizationWidget();
 
-signals:
+  signals:
     void backButtonClicked();
 
-private:
+  private:
     Ui::DataVisualizationWidget *ui;
 };
 
