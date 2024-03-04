@@ -1,7 +1,7 @@
 QT       += core gui
 QT       += charts
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets serialport
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets serialport printsupport
 
 CONFIG += sdk_no_version_check
 
@@ -27,11 +27,10 @@ SOURCES += \
     src/SimulationAnimation/simulationanimation.cpp \
     src/DataVisualization/datamodel.cpp \
     tests/testDataModel.cpp \
-    libs/qcustomplot.cpp
+    libs/qcustomplot.cpp \
 
 
 HEADERS += \
-    src/DataVisualization/customchartview.h \
     src/DataVisualization/datamodel.h \
     src/DataVisualization/datavisualizationwidget.h \
     src/MainWindow/mainwindow.h \
@@ -40,7 +39,8 @@ HEADERS += \
     src/SerialPortManager/serialportmanager.h \
     src/SimulationAnimation/simulationanimation.h \
     src/SimulationAnimation/simulationanimationwidget.h \
-    libs/qcustomplot.h
+    libs/qcustomplot.h \
+
 
 FORMS += \
     forms/mainwindow.ui \
@@ -55,7 +55,6 @@ DISTFILES += \
     docs/structure.md \
     tests/test.cvs
 
-#Un comment bottom line when use TEST_MODE
 #DEFINES += TEST_MODE
 
 # Default rules for deployment.

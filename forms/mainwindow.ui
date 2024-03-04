@@ -21,38 +21,94 @@
     <item>
      <widget class="QStackedWidget" name="mainStackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="defultPage">
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,1">
         <item>
-         <widget class="QWidget" name="widget" native="true">
+         <widget class="QWidget" name="expSelectWidget" native="true">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>5</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QWidget" name="defultButtonWidget" native="true">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>1</horstretch>
-            <verstretch>0</verstretch>
+            <verstretch>3</verstretch>
            </sizepolicy>
           </property>
           <property name="layoutDirection">
            <enum>Qt::RightToLeft</enum>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout">
+          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,3,5">
+           <property name="spacing">
+            <number>10</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label1">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>300</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>42</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>选择实验</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="expSelectComboBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>5</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="editable">
+              <bool>false</bool>
+             </property>
+             <property name="currentText">
+              <string/>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+            </widget>
+           </item>
            <item>
             <widget class="QPushButton" name="enterExpButton">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
+               <verstretch>5</verstretch>
               </sizepolicy>
              </property>
              <property name="minimumSize">
@@ -72,6 +128,24 @@
              </property>
             </widget>
            </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="defultButtonWidget" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <property name="rightMargin">
+            <number>50</number>
+           </property>
            <item>
             <widget class="QPushButton" name="viewDataButton">
              <property name="sizePolicy">
@@ -93,7 +167,7 @@
               </size>
              </property>
              <property name="text">
-              <string>查看数据</string>
+              <string>历史数据</string>
              </property>
             </widget>
            </item>
@@ -128,7 +202,118 @@
        </layout>
       </widget>
       <widget class="DataVisualizationWidget" name="dataPage"/>
-      <widget class="ParameterAdjustmentWidget" name="expPage"/>
+      <widget class="ParameterAdjustmentWidget" name="expPage1">
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>270</y>
+          <width>60</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>实验一</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="returnButton1">
+        <property name="geometry">
+         <rect>
+          <x>680</x>
+          <y>510</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="expPage2">
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>280</y>
+          <width>60</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>实验二</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="returnButton2">
+        <property name="geometry">
+         <rect>
+          <x>640</x>
+          <y>490</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="expPage3">
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>240</y>
+          <width>60</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>实验三</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="returnButton3">
+        <property name="geometry">
+         <rect>
+          <x>640</x>
+          <y>510</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="expPage4">
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>280</y>
+          <width>60</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>实验四</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="returnButton4">
+        <property name="geometry">
+         <rect>
+          <x>660</x>
+          <y>520</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -139,7 +324,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>24</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

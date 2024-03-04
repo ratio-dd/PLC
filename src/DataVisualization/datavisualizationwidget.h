@@ -3,24 +3,30 @@
 
 
 #include <QWidget>
+#include "../../libs/qcustomplot.h"
 
 namespace Ui {
-class DataVisualizationWidget;
+    class DataVisualizationWidget;
 }
 
-class  DataVisualizationWidget: public QWidget
-{
+class  DataVisualizationWidget: public QWidget {
     Q_OBJECT
 
-public:
+  public:
     explicit DataVisualizationWidget(QWidget *parent = nullptr);
     ~DataVisualizationWidget();
 
-signals:
+  signals:
     void backButtonClicked();
 
-private:
+  private slots:
+    void on_resetZoomButton_clicked();
+    void mouse_position_show(QMouseEvent *event);
+
+  private:
     Ui::DataVisualizationWidget *ui;
+    QVector<QCPGraphData> DataPoints;
+
 };
 
 #endif // DATAVISUALIZATIONWIDGET_H

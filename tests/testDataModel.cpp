@@ -7,7 +7,7 @@
 
 
 
-#ifdef TEST_MODE
+#ifdef IS_TESTING
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
 
