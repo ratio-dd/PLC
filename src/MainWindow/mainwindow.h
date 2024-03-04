@@ -14,23 +14,26 @@ class MainWindow : public QMainWindow {
   public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void backToDefault();
+
     void switchStackedWidgetPage(int pageIndex);
 
   private slots:
+    void backToDefault();
+
     void on_exitButton_clicked();
 
     void on_viewDataButton_clicked();
 
     void on_enterExpButton_clicked();
 
-    void on_returnButton1_clicked();
 
     void on_returnButton2_clicked();
 
     void on_returnButton3_clicked();
 
     void on_returnButton4_clicked();
+
+    void on_serialPortButton_clicked();
 
   private:
     Ui::MainWindow *ui;

@@ -9,7 +9,7 @@ DataVisualizationWidget::DataVisualizationWidget(QWidget *parent) :
     ui(new Ui::DataVisualizationWidget) {
     ui->setupUi(this);
 
-    connect(ui->backButton, &QPushButton::clicked, this, &DataVisualizationWidget::backButtonClicked);
+    //connect(ui->backButton, &QPushButton::clicked, this, &DataVisualizationWidget::backButtonClicked);
     connect(ui->chartWidget, &QCustomPlot::mouseMove, this, &DataVisualizationWidget::mouse_position_show);
 
     ui->chartWidget->addGraph();
@@ -88,4 +88,8 @@ void DataVisualizationWidget::mouse_position_show(QMouseEvent *event) {
     ui->xLineEdit->setText(QString::number(x, 'f', 2));
     ui->yLineEdit->setText(QString::number(y, 'f', 2));
     #endif
+}
+
+void DataVisualizationWidget::on_backButton_clicked() {
+    emit backButtonClicked();
 }

@@ -3,13 +3,15 @@
 
 ParameterAdjustmentWidget::ParameterAdjustmentWidget(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::ParameterAdjustmentWidget)
-{
+    ui(new Ui::ParameterAdjustmentWidget) {
     ui->setupUi(this);
-    connect(ui->backButton, &QPushButton::clicked, this, &ParameterAdjustmentWidget::backButtonClicked);
+    //connect(ui->backButton, &QPushButton::clicked, this, &ParameterAdjustmentWidget::backButtonClicked);
 }
 
-ParameterAdjustmentWidget::~ParameterAdjustmentWidget()
-{
+ParameterAdjustmentWidget::~ParameterAdjustmentWidget() {
     delete ui;
+}
+
+void ParameterAdjustmentWidget::on_backButton_clicked() {
+    emit backButtonClicked();
 }

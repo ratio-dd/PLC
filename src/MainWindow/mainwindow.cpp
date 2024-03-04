@@ -5,9 +5,10 @@
 
 
 enum StackedWidgetPages {
-    HomePage = 0,  // 主页索引
-    DataPage,      // 数据页自动为1
-    ExpPage1,        // 实验页自动为2
+    HomePage = 0,
+    SerialPortPage,
+    DataPage,
+    ExpPage1,
     ExpPage2,
     ExpPage3,
     ExpPage4
@@ -38,14 +39,19 @@ MainWindow::MainWindow(QWidget *parent)
     QStringList expName_list = {"实验一", "实验二", "实验三", "实验四"};
     ui->expSelectComboBox->addItems(expName_list);
 
-    DataVisualizationWidget *dvWidget = qobject_cast<DataVisualizationWidget *>(ui->mainStackedWidget->widget(1));
+    DataVisualizationWidget *dvWidget = qobject_cast<DataVisualizationWidget *>(ui->mainStackedWidget->widget(DataPage));
     if(dvWidget) {
         connect(dvWidget, &DataVisualizationWidget::backButtonClicked, this, &MainWindow::backToDefault);
     }
 
-    ParameterAdjustmentWidget *paWidget = qobject_cast<ParameterAdjustmentWidget *>(ui->mainStackedWidget->widget(2));
+    ParameterAdjustmentWidget *paWidget = qobject_cast<ParameterAdjustmentWidget *>(ui->mainStackedWidget->widget(ExpPage1));
     if(paWidget) {
         connect(paWidget, &ParameterAdjustmentWidget::backButtonClicked, this, &MainWindow::backToDefault);
+    }
+
+    SerialPortWidget *spWidget = qobject_cast<SerialPortWidget *>(ui->mainStackedWidget->widget(SerialPortPage));
+    if(paWidget) {
+        connect(spWidget, &SerialPortWidget::backButtonClicked, this, &MainWindow::backToDefault);
     }
 
 
@@ -66,9 +72,9 @@ void MainWindow::on_exitButton_clicked() {
 void MainWindow::on_viewDataButton_clicked() {
     switchStackedWidgetPage(DataPage);
 }
-void MainWindow::on_returnButton1_clicked() {
-    backToDefault();
-}
+
+
+
 void MainWindow::on_returnButton2_clicked() {
     backToDefault();
 }
@@ -99,3 +105,7 @@ void MainWindow::on_enterExpButton_clicked() {
 }
 
 
+
+void MainWindow::on_serialPortButton_clicked() {
+    switchStackedWidgetPage(SerialPortPage);
+}

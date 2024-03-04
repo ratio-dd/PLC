@@ -4,21 +4,23 @@
 #include <QWidget>
 
 namespace Ui {
-class ParameterAdjustmentWidget;
+    class ParameterAdjustmentWidget;
 }
 
-class ParameterAdjustmentWidget : public QWidget
-{
+class ParameterAdjustmentWidget : public QWidget {
     Q_OBJECT
 
-public:
+  public:
     explicit ParameterAdjustmentWidget(QWidget *parent = nullptr);
     ~ParameterAdjustmentWidget();
 
-signals:
+  signals:
     void backButtonClicked();
 
-private:
+  private slots:
+    void on_backButton_clicked();
+
+  private:
     Ui::ParameterAdjustmentWidget *ui;
 };
 

@@ -19,6 +19,19 @@
      <property name="layoutDirection">
       <enum>Qt::RightToLeft</enum>
      </property>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>170</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Parameter</string>
+      </property>
+     </widget>
     </widget>
    </item>
    <item>
@@ -33,7 +46,7 @@
       <enum>Qt::RightToLeft</enum>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string>返回</string>
      </property>
     </widget>
    </item>

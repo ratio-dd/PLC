@@ -19,6 +19,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     src/DataVisualization/datavisualizationwidget.cpp \
     src/ParameterAdjustment/parameteradjustmentwidget.cpp \
+    src/SerialPortManager/serialportwidget.cpp \
     src/SimulationAnimation/simulationanimationwidget.cpp \
     src/main.cpp \
     src/MainWindow/mainwindow.cpp \
@@ -37,6 +38,7 @@ HEADERS += \
     src/ParameterAdjustment/parameteradjustment.h \
     src/ParameterAdjustment/parameteradjustmentwidget.h \
     src/SerialPortManager/serialportmanager.h \
+    src/SerialPortManager/serialportwidget.h \
     src/SimulationAnimation/simulationanimation.h \
     src/SimulationAnimation/simulationanimationwidget.h \
     libs/qcustomplot.h \
@@ -46,7 +48,8 @@ FORMS += \
     forms/mainwindow.ui \
     forms/datavisualizationwidget.ui \
     forms/parameteradjustmentwidget.ui \
-    forms/simulationanimationwidget.ui
+    forms/simulationanimationwidget.ui \
+    forms/serialportwidget.ui \
 
 RESOURCES +=\
     res/

@@ -21,7 +21,7 @@
     <item>
      <widget class="QStackedWidget" name="mainStackedWidget">
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="defultPage">
        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,1">
@@ -147,6 +147,31 @@
             <number>50</number>
            </property>
            <item>
+            <widget class="QPushButton" name="serialPortButton">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>20</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>串口连接</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QPushButton" name="viewDataButton">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
@@ -201,35 +226,9 @@
         </item>
        </layout>
       </widget>
+      <widget class="SerialPortWidget" name="serialPortPage"/>
       <widget class="DataVisualizationWidget" name="dataPage"/>
-      <widget class="ParameterAdjustmentWidget" name="expPage1">
-       <widget class="QLabel" name="label">
-        <property name="geometry">
-         <rect>
-          <x>280</x>
-          <y>270</y>
-          <width>60</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>实验一</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="returnButton1">
-        <property name="geometry">
-         <rect>
-          <x>680</x>
-          <y>510</y>
-          <width>80</width>
-          <height>24</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-      </widget>
+      <widget class="ParameterAdjustmentWidget" name="expPage1"/>
       <widget class="QWidget" name="expPage2">
        <widget class="QLabel" name="label_2">
         <property name="geometry">
@@ -340,6 +339,12 @@
    <class>ParameterAdjustmentWidget</class>
    <extends>QWidget</extends>
    <header>src/ParameterAdjustment/parameteradjustmentwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SerialPortWidget</class>
+   <extends>QWidget</extends>
+   <header>src/SerialPortManager/serialportwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

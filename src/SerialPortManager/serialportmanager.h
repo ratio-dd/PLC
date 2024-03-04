@@ -2,10 +2,13 @@
 #define SERIALPORTMANAGER_H
 
 
-class SerialPortManager
-{
-public:
+class SerialPortManager {
+  public:
     SerialPortManager();
+
+
 };
+
+bool CheckConnect();
 
 #endif // SERIALPORTMANAGER_H

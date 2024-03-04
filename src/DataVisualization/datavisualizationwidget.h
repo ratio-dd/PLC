@@ -23,6 +23,8 @@ class  DataVisualizationWidget: public QWidget {
     void on_resetZoomButton_clicked();
     void mouse_position_show(QMouseEvent *event);
 
+    void on_backButton_clicked();
+
   private:
     Ui::DataVisualizationWidget *ui;
     QVector<QCPGraphData> DataPoints;

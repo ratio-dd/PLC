@@ -5,3 +5,8 @@
 SerialPortManager::SerialPortManager() {
 
 }
+
+
+bool CheckConnect() {
+    return false;
+}
