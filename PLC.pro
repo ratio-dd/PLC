@@ -1,5 +1,6 @@
 QT       += core gui
 QT       += charts
+QT       += testlib
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
@@ -26,8 +27,9 @@ SOURCES += \
     src/SerialPortManager/serialportmanager.cpp \
     src/SimulationAnimation/simulationanimation.cpp \
     src/DataVisualization/datamodel.cpp \
+    tests/testData.cpp \
     tests/testDataModel.cpp \
-    libs/qcustomplot.cpp \
+    libs/qcustomplot.cpp
 
 
 HEADERS += \
@@ -40,6 +42,7 @@ HEADERS += \
     src/SimulationAnimation/simulationanimation.h \
     src/SimulationAnimation/simulationanimationwidget.h \
     libs/qcustomplot.h \
+    tests/testData.h
 
 
 FORMS += \
