@@ -1,18 +1,41 @@
 #include "serialportwidget.h"
 #include "ui_serialportwidget.h"
 #include "../MainWindow/mainwindow.h"
-#include "serialportmanager.h"
 
 SerialPortWidget::SerialPortWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::SerialPortWidget) {
     ui->setupUi(this);
 
-    QStringList baudRate = {"300", "600", "1200", "2400", "4800", "9600", "19200", "38400", "43000", "56000", "57600", "115200"};
+    struct BaudRateItem {
+        QString name;
+        qint32 value;
+    };
+    BaudRateItem baudRates[] = {
+        {"1200", QSerialPort::Baud1200},
+        {"2400", QSerialPort::Baud2400},
+        {"4800", QSerialPort::Baud4800},
+        {"9600", QSerialPort::Baud9600},
+        {"19200", QSerialPort::Baud19200},
+        {"38400", QSerialPort::Baud38400},
+        {"57600", QSerialPort::Baud57600},
+        {"115200", QSerialPort::Baud115200}
+    };
 
-    ui->BaudRateBox->addItems(baudRate);
-    ui->BaudRateBox->setCurrentIndex(5);
+    for(const auto &item : baudRates) {
+        ui->BaudRateBox->addItem(item.name, item.value);
+    }
+    ui->BaudRateBox->setCurrentIndex(3);
 
+    emit widgetCreated(this);
+
+}
+
+bool SerialPortWidget::setupSerialPortManagerConnections(SerialPortManager *manager) {
+    bool success = true;
+    success &= bool(connect(manager, &SerialPortManager::connectionResult,
+                            this, &SerialPortWidget::updateConnectionStatus));
+    return success;
 }
 
 
@@ -26,10 +49,19 @@ void SerialPortWidget::on_backButton_clicked() {
 }
 
 void SerialPortWidget::on_checkConnectButton_clicked() {
-    if(CheckConnect()) {
+
+    int baudRate = ui->BaudRateBox->currentData().toInt();
+    emit baudRateChanged(baudRate);
+
+}
+
+// auto update after receive connectionResult from Serial Port Manager
+void SerialPortWidget::updateConnectionStatus(bool success) {
+    if(success) {
         ui->connectFeedBackLabel->setText("成功");
         ui->connectFeedBackLabel->setStyleSheet("QLabel { color : green; }");
+    } else {
+        ui->connectFeedBackLabel->setText("失败");
+        ui->connectFeedBackLabel->setStyleSheet("QLabel { color : red; }");
     }
-    ui->connectFeedBackLabel->setText("失败");
-    ui->connectFeedBackLabel->setStyleSheet("QLabel { color : red; }");
 }

@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QStackedWidget>
+#include "../SerialPortManager/serialportmanager.h"
+#include "../SerialPortManager/serialportwidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,6 +19,10 @@ class MainWindow : public QMainWindow {
 
     void switchStackedWidgetPage(int pageIndex);
 
+  private:
+    SerialPortManager *serialPortManager;
+    void onSPWidgetCreated(SerialPortWidget *spWidget);
+
   private slots:
     void backToDefault();
 
@@ -26,14 +32,13 @@ class MainWindow : public QMainWindow {
 
     void on_enterExpButton_clicked();
 
+    void on_serialPortButton_clicked();
 
     void on_returnButton2_clicked();
 
     void on_returnButton3_clicked();
 
     void on_returnButton4_clicked();
-
-    void on_serialPortButton_clicked();
 
   private:
     Ui::MainWindow *ui;

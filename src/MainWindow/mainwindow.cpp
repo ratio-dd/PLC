@@ -29,6 +29,7 @@ void MainWindow::switchStackedWidgetPage(int pageIndex) {
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
+    , serialPortManager(new SerialPortManager(this))
     , ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
@@ -50,9 +51,13 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
     SerialPortWidget *spWidget = qobject_cast<SerialPortWidget *>(ui->mainStackedWidget->widget(SerialPortPage));
-    if(paWidget) {
+    if(spWidget) {
         connect(spWidget, &SerialPortWidget::backButtonClicked, this, &MainWindow::backToDefault);
     }
+
+    // listen widgets created
+    connect(spWidget, &SerialPortWidget::widgetCreated, this, &MainWindow::onSPWidgetCreated);
+
 
 
 }
@@ -73,6 +78,9 @@ void MainWindow::on_viewDataButton_clicked() {
     switchStackedWidgetPage(DataPage);
 }
 
+void MainWindow::on_serialPortButton_clicked() {
+    switchStackedWidgetPage(SerialPortPage);
+}
 
 
 void MainWindow::on_returnButton2_clicked() {
@@ -104,8 +112,8 @@ void MainWindow::on_enterExpButton_clicked() {
 
 }
 
-
-
-void MainWindow::on_serialPortButton_clicked() {
-    switchStackedWidgetPage(SerialPortPage);
+void MainWindow::onSPWidgetCreated(SerialPortWidget *spWidget) {
+    serialPortManager->connectToWidget(spWidget);
 }
+
+
