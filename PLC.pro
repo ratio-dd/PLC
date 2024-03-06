@@ -20,12 +20,10 @@ SOURCES += \
     src/DataVisualization/datavisualizationwidget.cpp \
     src/ParameterAdjustment/parameteradjustmentwidget.cpp \
     src/SerialPortManager/serialportwidget.cpp \
-    src/SimulationAnimation/simulationanimationwidget.cpp \
     src/main.cpp \
     src/MainWindow/mainwindow.cpp \
     src/ParameterAdjustment/parameteradjustment.cpp \
     src/SerialPortManager/serialportmanager.cpp \
-    src/SimulationAnimation/simulationanimation.cpp \
     src/DataVisualization/datamodel.cpp \
     tests/testDataModel.cpp \
     libs/qcustomplot.cpp \
@@ -39,8 +37,6 @@ HEADERS += \
     src/ParameterAdjustment/parameteradjustmentwidget.h \
     src/SerialPortManager/serialportmanager.h \
     src/SerialPortManager/serialportwidget.h \
-    src/SimulationAnimation/simulationanimation.h \
-    src/SimulationAnimation/simulationanimationwidget.h \
     libs/qcustomplot.h \
 
 
@@ -48,7 +44,6 @@ FORMS += \
     forms/mainwindow.ui \
     forms/datavisualizationwidget.ui \
     forms/parameteradjustmentwidget.ui \
-    forms/simulationanimationwidget.ui \
     forms/serialportwidget.ui \
 
 RESOURCES +=\
