@@ -19,9 +19,14 @@ class MainWindow : public QMainWindow {
 
     void switchStackedWidgetPage(int pageIndex);
 
+  signals:
+    void SPWidgetCreated(SerialPortWidget *spWidget);
+
   private:
-    SerialPortManager *serialPortManager;
-    void onSPWidgetCreated(SerialPortWidget *spWidget);
+    SerialPortManager *spManager;
+    bool setupSerialPortWidgetManagerConnection(SerialPortWidget *spWidget,
+            SerialPortManager *spManager);
+
 
   private slots:
     void backToDefault();
@@ -39,6 +44,7 @@ class MainWindow : public QMainWindow {
     void on_returnButton3_clicked();
 
     void on_returnButton4_clicked();
+
 
   private:
     Ui::MainWindow *ui;

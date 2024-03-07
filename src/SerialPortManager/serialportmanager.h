@@ -4,7 +4,8 @@
 #include <QObject>
 #include <QSerialPort>
 #include <QSerialPortInfo>
-#include "serialportwidget.h"
+
+class SerialPortWidget;
 
 class SerialPortManager : public QObject {
     Q_OBJECT
@@ -12,13 +13,16 @@ class SerialPortManager : public QObject {
   public:
     explicit SerialPortManager(QObject *parent = nullptr);
     void checkConnect();
+    void setBaudRate(int baudRate);
 
   signals:
     void connectionResult(bool success);
+
+  public slots:
+
   private:
     QSerialPort *qsp;
-    void connectToWidget(SerialPortWidget *spWidget);
-    void setBaudRate(int baudRate);
+
 };
 
 

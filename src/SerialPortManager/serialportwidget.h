@@ -3,27 +3,28 @@
 
 #include <QWidget>
 #include <QtSerialPort>
-#include "serialportmanager.h"
 
 namespace Ui {
     class SerialPortWidget;
 }
+
+// Forward Declaration
+class SerialPortManager;
 
 class SerialPortWidget : public QWidget {
     Q_OBJECT
 
   public:
     explicit SerialPortWidget(QWidget *parent = nullptr);
-    bool setupSerialPortManagerConnections(SerialPortManager *manager);
     ~SerialPortWidget();
+    void updateConnectionStatus(bool success);
 
   signals:
     void backButtonClicked();
     void baudRateChanged(int baudRate);
-    void widgetCreated(SerialPortWidget serialPortWidget);
+    void widgetCreated(SerialPortWidget *spWidget);
 
   private:
-    void updateConnectionStatus(bool success);
 
   private slots:
     void on_backButton_clicked();

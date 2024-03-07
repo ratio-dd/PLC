@@ -29,7 +29,7 @@ void MainWindow::switchStackedWidgetPage(int pageIndex) {
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , serialPortManager(new SerialPortManager(this))
+    , spManager(new SerialPortManager(this))
     , ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
@@ -53,10 +53,9 @@ MainWindow::MainWindow(QWidget *parent)
     SerialPortWidget *spWidget = qobject_cast<SerialPortWidget *>(ui->mainStackedWidget->widget(SerialPortPage));
     if(spWidget) {
         connect(spWidget, &SerialPortWidget::backButtonClicked, this, &MainWindow::backToDefault);
+        setupSerialPortWidgetManagerConnection(spWidget, spManager);
     }
 
-    // listen widgets created
-    connect(spWidget, &SerialPortWidget::widgetCreated, this, &MainWindow::onSPWidgetCreated);
 
 
 
@@ -112,8 +111,23 @@ void MainWindow::on_enterExpButton_clicked() {
 
 }
 
-void MainWindow::onSPWidgetCreated(SerialPortWidget *spWidget) {
-    serialPortManager->connectToWidget(spWidget);
+bool MainWindow::setupSerialPortWidgetManagerConnection(
+                SerialPortWidget *spWidget, SerialPortManager *spManager) {
+    bool success = true;
+
+    success &= bool(connect(spWidget, &SerialPortWidget::baudRateChanged,
+                            spManager, &SerialPortManager::setBaudRate));
+
+    success &= bool(connect(spManager, &SerialPortManager::connectionResult,
+                            spWidget, &SerialPortWidget::updateConnectionStatus));
+
+    return success;
 }
+
+
+
+
+
+
 
 

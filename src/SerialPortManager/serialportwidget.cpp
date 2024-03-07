@@ -1,6 +1,5 @@
 #include "serialportwidget.h"
 #include "ui_serialportwidget.h"
-#include "../MainWindow/mainwindow.h"
 
 SerialPortWidget::SerialPortWidget(QWidget *parent) :
     QWidget(parent),
@@ -31,18 +30,10 @@ SerialPortWidget::SerialPortWidget(QWidget *parent) :
 
 }
 
-bool SerialPortWidget::setupSerialPortManagerConnections(SerialPortManager *manager) {
-    bool success = true;
-    success &= bool(connect(manager, &SerialPortManager::connectionResult,
-                            this, &SerialPortWidget::updateConnectionStatus));
-    return success;
-}
-
 
 SerialPortWidget::~SerialPortWidget() {
     delete ui;
 }
-
 
 void SerialPortWidget::on_backButton_clicked() {
     emit backButtonClicked();
