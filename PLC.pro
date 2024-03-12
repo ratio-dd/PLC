@@ -1,5 +1,6 @@
 QT       += core gui
 QT       += charts
+QT       += testlib
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets serialport printsupport
 
@@ -25,8 +26,10 @@ SOURCES += \
     src/ParameterAdjustment/parameteradjustment.cpp \
     src/SerialPortManager/serialportmanager.cpp \
     src/DataVisualization/datamodel.cpp \
+    tests/testData.cpp \
     tests/testDataModel.cpp \
-    libs/qcustomplot.cpp \
+    libs/qcustomplot.cpp
+    tests/testSerialPort.cpp
 
 
 HEADERS += \
@@ -38,6 +41,7 @@ HEADERS += \
     src/SerialPortManager/serialportmanager.h \
     src/SerialPortManager/serialportwidget.h \
     libs/qcustomplot.h \
+    tests/testData.h
 
 
 FORMS += \
