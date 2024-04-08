@@ -45,6 +45,9 @@ class MainWindow : public QMainWindow {
 
     void on_returnButton4_clicked();
 
+    void on_databaseButton_clicked();
+
+
 
   private:
     Ui::MainWindow *ui;
