@@ -28,7 +28,7 @@ SOURCES += \
     src/DataVisualization/datamodel.cpp \
     tests/testData.cpp \
     tests/testDataModel.cpp \
-    libs/qcustomplot.cpp
+    libs/qcustomplot.cpp \
     tests/testSerialPort.cpp
 
 
@@ -41,7 +41,8 @@ HEADERS += \
     src/SerialPortManager/serialportmanager.h \
     src/SerialPortManager/serialportwidget.h \
     libs/qcustomplot.h \
-    tests/testData.h
+    tests/testData.h \
+    tests/testSerialPort.h
 
 
 FORMS += \

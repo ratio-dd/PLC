@@ -64,7 +64,7 @@ DataVisualizationWidget::DataVisualizationWidget(QWidget *parent) :
     ui->tableWidget->setItem(1, 0, new QTableWidgetItem("设定值"));
     ui->tableWidget->setItem(2, 0, new QTableWidgetItem("测量值"));
     ui->tableWidget->setItem(3, 0, new QTableWidgetItem("加热比例"));
-    ui->tableWidget->setItem(0, 1, new QTableWidgetItem("还没想好放什么"));
+    //    ui->tableWidget->setItem(0, 1, new QTableWidgetItem(""));
 
 
 }
