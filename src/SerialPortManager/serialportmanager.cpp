@@ -16,3 +16,6 @@ void SerialPortManager::setBaudRate(int baudRate) {
     qsp->setBaudRate(baudRate, QSerialPort::AllDirections);
     checkConnect();
 }
+void SerialPortManager::setDeivce(const QSerialPortInfo info) {
+    qsp->setPortName(info.systemLocation());
+}

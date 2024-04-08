@@ -1,6 +1,7 @@
 QT       += core gui
 QT       += charts
 QT       += testlib
+QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets serialport printsupport
 
@@ -19,6 +20,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     src/DataVisualization/datavisualizationwidget.cpp \
+    src/DataVisualization/db.cpp \
     src/ParameterAdjustment/parameteradjustmentwidget.cpp \
     src/SerialPortManager/serialportwidget.cpp \
     src/main.cpp \
@@ -35,6 +37,7 @@ SOURCES += \
 HEADERS += \
     src/DataVisualization/datamodel.h \
     src/DataVisualization/datavisualizationwidget.h \
+    src/DataVisualization/db.h \
     src/MainWindow/mainwindow.h \
     src/ParameterAdjustment/parameteradjustment.h \
     src/ParameterAdjustment/parameteradjustmentwidget.h \

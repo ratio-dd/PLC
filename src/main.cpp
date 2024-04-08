@@ -2,11 +2,14 @@
 #include <QApplication>
 #include "../tests/testData.h"
 #include "../tests/testSerialPort.h"
+#include <QSerialPortInfo>
+Q_DECLARE_METATYPE(QSerialPortInfo)
 
 #ifndef TEST_MODE
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     qDebug() << "Running main";
+    qRegisterMetaType<QSerialPortInfo>("QSerialPortInfo");
 
     // 检测 "--test" 参数但不将其传递给 QTest
     if(argc > 1 && QString(argv[1]) == "--test") {
@@ -20,7 +23,7 @@ int main(int argc, char *argv[]) {
     MainWindow w;
     w.show();
 
-    // 串口枚举测试
+    //    //    串口枚举测试
     //    qDebug() << "Available ports:";
     //    foreach(const QSerialPortInfo &info, QSerialPortInfo::availablePorts()) {
     //        qDebug() << "Name        : " << info.portName();

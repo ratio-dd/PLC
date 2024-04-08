@@ -14,6 +14,7 @@ class SerialPortManager : public QObject {
     explicit SerialPortManager(QObject *parent = nullptr);
     void checkConnect();
     void setBaudRate(int baudRate);
+    void setDeivce(const QSerialPortInfo);
 
   signals:
     void connectionResult(bool success);

@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QtSerialPort>
-
+#include <QString>
 namespace Ui {
     class SerialPortWidget;
 }
@@ -23,13 +23,15 @@ class SerialPortWidget : public QWidget {
     void backButtonClicked();
     void baudRateChanged(int baudRate);
     void widgetCreated(SerialPortWidget *spWidget);
-
+    void deviceSelected(const QSerialPortInfo);
   private:
 
   private slots:
     void on_backButton_clicked();
 
     void on_checkConnectButton_clicked();
+
+    void on_deviceComboBox_activated(int index);
 
   private:
     Ui::SerialPortWidget *ui;

@@ -56,6 +56,9 @@ MainWindow::MainWindow(QWidget *parent)
         setupSerialPortWidgetManagerConnection(spWidget, spManager);
     }
 
+    // 选择串口设备后，将信息发送给SPM
+    connect(spWidget, &SerialPortWidget::deviceSelected, spManager, &SerialPortManager::setDeivce);
+
 
 
 
@@ -123,7 +126,6 @@ bool MainWindow::setupSerialPortWidgetManagerConnection(
 
     return success;
 }
-
 
 
 
