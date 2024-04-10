@@ -71,4 +71,7 @@ Thumbs.db
 *.dll
 *.exe
 
+# Git file
+.gitattributes
+
 docs/GLCK-JK温度、压力用户手册.pdf
