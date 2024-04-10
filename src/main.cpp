@@ -1,15 +1,14 @@
+#include <QSerialPortInfo>
 #include "MainWindow/mainwindow.h"
 #include <QApplication>
 #include "../tests/testData.h"
 #include "../tests/testSerialPort.h"
-#include <QSerialPortInfo>
-Q_DECLARE_METATYPE(QSerialPortInfo)
+
 
 #ifndef TEST_MODE
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     qDebug() << "Running main";
-    qRegisterMetaType<QSerialPortInfo>("QSerialPortInfo");
 
     // 检测 "--test" 参数但不将其传递给 QTest
     if(argc > 1 && QString(argv[1]) == "--test") {

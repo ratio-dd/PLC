@@ -4,6 +4,8 @@
 SerialPortWidget::SerialPortWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::SerialPortWidget) {
+    qRegisterMetaType<QSerialPortInfo>("QSerialPortInfo");
+
     ui->setupUi(this);
 
     struct BaudRateItem {
@@ -64,7 +66,7 @@ void SerialPortWidget::updateConnectionStatus(bool success) {
 
 
 void SerialPortWidget::on_deviceComboBox_activated(int index) {
-    const QSerialPortInfo &info =  ui->deviceComboBox->itemData(index).value<QSerialPortInfo>();
+    QSerialPortInfo info =  ui->deviceComboBox->itemData(index).value<QSerialPortInfo>();
     emit deviceSelected(info);
 
 }

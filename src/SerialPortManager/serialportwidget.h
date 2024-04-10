@@ -4,6 +4,10 @@
 #include <QWidget>
 #include <QtSerialPort>
 #include <QString>
+#include <QSerialPortInfo>
+
+Q_DECLARE_METATYPE(QSerialPortInfo)
+
 namespace Ui {
     class SerialPortWidget;
 }
