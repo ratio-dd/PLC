@@ -197,6 +197,13 @@
             </widget>
            </item>
            <item>
+            <widget class="QPushButton" name="databaseButton">
+             <property name="text">
+              <string>database</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QPushButton" name="exitButton">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">

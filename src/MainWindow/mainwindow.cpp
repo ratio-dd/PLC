@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "../DataVisualization/datavisualizationwidget.h"
 #include "../ParameterAdjustment/parameteradjustmentwidget.h"
+#include "../DataVisualization/db.h"
 
 
 enum StackedWidgetPages {
@@ -127,6 +128,9 @@ bool MainWindow::setupSerialPortWidgetManagerConnection(
     return success;
 }
 
+void MainWindow::on_databaseButton_clicked() {
+    DB *db = new DB();
+}
 
 
 
