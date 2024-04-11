@@ -23,6 +23,9 @@ class SerialPortWidget : public QWidget {
     ~SerialPortWidget();
     void updateConnectionStatus(bool success);
 
+  public slots:
+    void on_deviceComboBox_activated(int index);
+
   signals:
     void backButtonClicked();
     void baudRateChanged(int baudRate);
@@ -35,7 +38,6 @@ class SerialPortWidget : public QWidget {
 
     void on_checkConnectButton_clicked();
 
-    void on_deviceComboBox_activated(int index);
 
   private:
     Ui::SerialPortWidget *ui;

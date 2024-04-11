@@ -57,8 +57,10 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
     // 选择串口设备后，将信息发送给SPM
-    connect(spWidget, &SerialPortWidget::deviceSelected, spManager, &SerialPortManager::setDeivce);
+    bool success = connect(spWidget, &SerialPortWidget::deviceSelected, spManager, &SerialPortManager::setDeivce);
+    Q_ASSERT(success); // 确保连接成功
 
+    spWidget->on_deviceComboBox_activated(0);
 
 
 

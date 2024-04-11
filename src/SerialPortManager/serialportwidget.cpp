@@ -29,12 +29,11 @@ SerialPortWidget::SerialPortWidget(QWidget *parent) :
     ui->BaudRateBox->setCurrentIndex(3);
 
     foreach(const QSerialPortInfo &info, QSerialPortInfo::availablePorts()) {
-        QString displayName = QString("%1 - %2").arg(info.portName(), info.description());
+        QString displayName = QString("%1").arg(info.portName());
         ui->deviceComboBox->addItem(displayName, QVariant::fromValue(info));
     }
 
     emit widgetCreated(this);
-
 }
 
 
@@ -68,5 +67,4 @@ void SerialPortWidget::updateConnectionStatus(bool success) {
 void SerialPortWidget::on_deviceComboBox_activated(int index) {
     QSerialPortInfo info =  ui->deviceComboBox->itemData(index).value<QSerialPortInfo>();
     emit deviceSelected(info);
-
 }
